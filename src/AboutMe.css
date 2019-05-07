@@ -1,0 +1,18 @@
+.carousel-control-prev,
+.carousel-control-next {
+  filter: invert(70%);
+  width: 10px;
+  height: 10px;
+}
+
+.carousel-indicators {
+  filter: invert(80%);
+  bottom: -50px;
+}
+.carousel-indicators li {
+  border-radius: 10px;
+  margin: 1px 3px;
+  height: 10px;
+  max-width: 10px;
+  border: 1px solid #fff;
+}

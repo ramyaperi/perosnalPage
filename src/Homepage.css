@@ -1,0 +1,14 @@
+.bgImage {
+  background-image: url(./images/triangles.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .card {
+    min-height: 100vh;
+  }
+}
