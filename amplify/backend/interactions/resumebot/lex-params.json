@@ -1,0 +1,25 @@
+{
+    "resourceName": "resumebot",
+    "botName": "Resume",
+    "intents": [
+        {
+            "slots": [
+                {
+                    "name": "Language",
+                    "type": "Resume_Languages",
+                    "prompt": "which langauage",
+                    "required": true,
+                    "customType": true
+                }
+            ],
+            "utterances": [
+                "download resume"
+            ],
+            "intentName": "resumebyLanguage",
+            "newSlotTypes": []
+        }
+    ],
+    "outputVoice": false,
+    "sessionTimeout": "1",
+    "coppa": false
+}

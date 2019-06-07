@@ -7,11 +7,15 @@ import {
   Nav,
   Card,
   Jumbotron,
-  ListGroup
+  Button,
+  ButtonGroup,
+  Modal
 } from "react-bootstrap";
+
 import AboutMe from "./AboutMe.js";
 import Resume from "./Resume.js";
 import Blog from "./Blog.js";
+import LexBot from "./LexBot.js";
 import img from "./images/stockimage.jpg";
 import profile from "./images/profile.jpg";
 import "./Homepage.css";
@@ -22,17 +26,39 @@ const MyComponents = {
   Blog: Blog
 };
 var Comp = AboutMe;
+
 class Homepage extends Component {
+  constructor(props) {
+    super(props);
+    this.handleChat = this.handleChat.bind(this);
+    this.handleShowContact = this.handleShowContact.bind(this);
+    this.handleCloseContact = this.handleCloseContact.bind(this);
+  }
   state = {
-    selectedKey: "AboutMe"
+    selectedKey: "AboutMe",
+    open: false,
+    intent: "download",
+    showContact: false
   };
-  handleNav(selectedKey) {
+  handleNav = selectedKey => {
     Comp = MyComponents[selectedKey];
     this.setState(state => ({
       selectedKey
     }));
-  }
+  };
 
+  handleChat = ev => {
+    this.setState(state => ({
+      open: true,
+      intent: ev.currentTarget.value
+    }));
+  };
+  handleShowContact() {
+    this.setState({ showContact: true });
+  }
+  handleCloseContact() {
+    this.setState({ showContact: false });
+  }
   render() {
     return (
       <Container fluid={true} className="bgImage">
@@ -84,23 +110,34 @@ class Homepage extends Component {
                     />
                   </li>
                 </ul>
-                <ListGroup className="d-flex flex-row align-items-end">
-                  <ListGroup.Item className="flex-fill fa fas fa-download">
+                <ButtonGroup className="d-flex flex-row align-items-end">
+                  <Button
+                    variant="outline-dark"
+                    className="fa fas fa-download"
+                    value={"download"}
+                    onClick={this.handleChat}
+                  >
                     {/* adding a white space char with out converstion creating
                     random HTML tags*/}
                     {"      "}
                     Download CV
-                  </ListGroup.Item>
-                  <ListGroup.Item className="flex-fill fa fas fa-address-card">
+                  </Button>
+
+                  <Button
+                    variant="outline-dark"
+                    className="fa fas fa-address-card"
+                    value={"contact"}
+                    onClick={this.handleShowContact}
+                  >
                     {/* adding a white space char with out converstion creating
                   random HTML tags*/}
                     {"      "}Contact Me
-                  </ListGroup.Item>
-                </ListGroup>
+                  </Button>
+                </ButtonGroup>
               </Card.Body>
             </Card>
           </Col>
-          <Col md={6} className="pl-0 my-auto">
+          <Col md={6} className="pl-md-0 my-auto">
             <Jumbotron
               style={{
                 maxHeight: "90vh",
@@ -113,6 +150,30 @@ class Homepage extends Component {
             </Jumbotron>
           </Col>
         </Row>
+        <LexBot visible={this.state.open} intent={this.state.intent} />
+        <Modal show={this.state.showContact} onHide={this.handleCloseContact}>
+          <Modal.Header closeButton>
+            <Modal.Title>Contact Info</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            WebSite:{" "}
+            <a href="d33lhefgdkysnz.cloudfront.net">
+              {" "}
+              https://d386x9ioxoqck9.cloudfront.net{" "}
+            </a>{" "}
+            <br />
+            LinkedIn:{" "}
+            <a href="https://www.linkedin.com/in/ramya-peri">
+              https://www.linkedin.com/in/ramya-peri
+            </a>
+            <br />
+            Github:{" "}
+            <a href="https://github.com/ramyaperi">github.com/ramyaperi</a>
+            <br />
+            Phone : +4915205125808 (Mobile) <br /> Email: ramyaperi2@gmail.com
+          </Modal.Body>
+          <Modal.Footer>Email is prefered method of contact</Modal.Footer>
+        </Modal>
       </Container>
     );
   }

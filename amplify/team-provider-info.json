@@ -1,0 +1,31 @@
+{
+    "lexbot": {
+        "awscloudformation": {
+            "AuthRoleName": "personalwebpage-lexbot-20190509224511-authRole",
+            "UnauthRoleArn": "arn:aws:iam::516500432454:role/personalwebpage-lexbot-20190509224511-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::516500432454:role/personalwebpage-lexbot-20190509224511-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "personalwebpage-lexbot-20190509224511-deployment",
+            "UnauthRoleName": "personalwebpage-lexbot-20190509224511-unauthRole",
+            "StackName": "personalwebpage-lexbot-20190509224511",
+            "StackId": "arn:aws:cloudformation:eu-central-1:516500432454:stack/personalwebpage-lexbot-20190509224511/58b82030-729b-11e9-8b78-02625fbcaeee"
+        }
+    },
+    "webpage": {
+        "awscloudformation": {
+            "AuthRoleName": "personalwebpage-webpage-20190512192838-authRole",
+            "UnauthRoleArn": "arn:aws:iam::516500432454:role/personalwebpage-webpage-20190512192838-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::516500432454:role/personalwebpage-webpage-20190512192838-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "personalwebpage-webpage-20190512192838-deployment",
+            "UnauthRoleName": "personalwebpage-webpage-20190512192838-unauthRole",
+            "StackName": "personalwebpage-webpage-20190512192838",
+            "StackId": "arn:aws:cloudformation:us-east-1:516500432454:stack/personalwebpage-webpage-20190512192838/64473980-74db-11e9-bfc1-0a00a1b75a8c"
+        },
+        "categories": {
+            "auth": {
+                "cognito232155f7": {}
+            }
+        }
+    }
+}
