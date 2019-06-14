@@ -1,3 +1,25 @@
+## Hosted with AWS Amplify Framework
+
+This project is hosted on s3 bucket and distributed bz aws cloudfront, and used aws Lex for chating 
+
+### `npm install --save aws-amplify`
+
+For Chat Interactions module needs to be added, and can create your lex bot from CLI now
+
+### `amplify add interactions`
+and publish the bot with
+### `amplify push` 
+
+
+For hosting and configue hosing as per your needs by selecting DEV(S3 bucket hosting) PROD(S3 with cloudfront) and selecting your s3 bucket name
+
+### `amplify hosting add`
+and publish the site with 
+### `amplify hosting publish`
+
+
+## React
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
